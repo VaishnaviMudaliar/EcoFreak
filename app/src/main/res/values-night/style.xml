@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary" />
+        <item name="colorPrimaryDark" />
+        <item name="colorAccent" />
+    </style>
+
+    <style name="myEditTextStyles">
+        <item name="colorControlNormal">#ffffff</item>
+        <item name="colorControlActivated">#ffffff</item>
+        <item name="colorControlHighlight">#ffffff</item>
+        <item name="colorAccent">#ffffff</item>
+        <item name="android:textColorHint">#ffffff</item>
+    </style>
+
+
+
+
+
+
+
+</resources>
