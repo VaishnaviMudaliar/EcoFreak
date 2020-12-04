@@ -1,47 +1,59 @@
 package com.example.ecofreak;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
-import android.annotation.SuppressLint;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.Calendar;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    ConstraintLayout constraintLayout;
-    TextView tvTimeMsg;
+    EditText mTextUsername ;
+    EditText mTextPassword;
+    Button  mButtonLogin;
+    TextView mTextViewCreateAnAccount;
 
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    DatabaseHelper db;
+
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mTextUsername= findViewById(R.id.editTextUsername);
+        mTextPassword= findViewById(R.id.editTextPassword);
+        mButtonLogin= findViewById(R.id.button_sign_in);
+        mTextViewCreateAnAccount= findViewById(R.id.TextView_Register);
+        db=new DatabaseHelper(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        constraintLayout= findViewById(R.id.container);
-        tvTimeMsg=findViewById(R.id.tv_time_msg);
-        Calendar c=  Calendar.getInstance();
-        int timeOfDay= c.get(Calendar.HOUR_OF_DAY);
-        if(timeOfDay>=0 && timeOfDay<12){
-            //morning
-            constraintLayout.setBackground(getDrawable(R.drawable.good_morning_img));
-            tvTimeMsg.setText("Good Morning");
-        }
-        else if(timeOfDay>=12 && timeOfDay<16){
-            //afternoon
+        mTextViewCreateAnAccount.setOnClickListener(view -> {
+            Intent registerIntent=new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(registerIntent);
 
-        }
-        else if(timeOfDay>=16 && timeOfDay<21){
 
-        }
+        });
 
-        else if(timeOfDay>=21 && timeOfDay<24){
-            constraintLayout.setBackground(getDrawable(R.drawable.good_night_img));
-            tvTimeMsg.setText("Good Night");
 
-        }
-    }}
+        mButtonLogin.setOnClickListener(v -> {
+            String User= mTextUsername.getText().toString().trim();
+            String password= mTextPassword.getText().toString().trim();
+            boolean res= db.CheckUser(User,password);
+            if(res){
+                Toast.makeText(MainActivity.this,"Successfully Logged in",Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(MainActivity.this,"Error in login",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+    }
+}

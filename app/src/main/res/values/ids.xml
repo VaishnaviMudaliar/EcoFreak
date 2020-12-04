@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="TextUsername" type="id">TextUsername</item>
+    <item name="TextPassword" type="id">TextPassword</item>
+    <item name="editTextCnfPassword" type="id">editTextCnfPassword</item>
+    <item name="button_sign_up" type="id">button_sign_up</item>
+    <item name="TextView_Login" type="id">Textview_Login</item>
+</resources>

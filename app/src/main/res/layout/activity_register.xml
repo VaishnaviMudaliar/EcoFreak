@@ -4,21 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity"
+    android:background="#000000">
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/TextUsername"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:autofillHints="Username"
+        android:background="#FF424242"
         android:ems="10"
-        android:hint="@string/email"
-        android:background="@color/cardview_dark_background"
-
-
-
+        android:hint="@string/username"
 
 
         android:inputType="textEmailAddress"
@@ -28,48 +25,62 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/TextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:autofillHints="Password"
+        android:background="#FF424242"
         android:ems="10"
-        android:background="@color/cardview_dark_background"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextUsername" />
+
+    <EditText
+        android:id="@+id/editTextCnfPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Confirm Password"
+        android:background="#FF424242"
+        android:ems="10"
+        android:hint="@string/confirm_password"
+
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/button_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
-
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toBottomOf="@+id/TextPassword" />
 
     <Button
-        android:id="@+id/button_sign_in"
+        android:id="@+id/button_sign_up"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/purple_200"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextCnfPassword" />
 
     <TextView
-        android:id="@+id/TextView_Register"
+        android:id="@+id/TextView_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
 
-        android:text="@string/create_an_account"
+        android:text="@string/login"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_sign_in"
+        app:layout_constraintTop_toBottomOf="@+id/button_sign_up"
         app:layout_constraintVertical_bias="0.45" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

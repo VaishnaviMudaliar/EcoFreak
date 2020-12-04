@@ -7,4 +7,9 @@
     <string name="good_night">Good Night</string>
     <string name="sign_in">Sign In</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">confirm_password</string>
+    <string name="login">Login</string>
+    <string name="create_an_account">create_an_account</string>
+    <string name="email">Email</string>
 </resources>
