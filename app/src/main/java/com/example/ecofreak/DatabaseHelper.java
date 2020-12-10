@@ -38,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
 
     }
-    public long adduser(String user,String password){
+    public long add_user(String user,String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put("username",user);
@@ -57,8 +57,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         int count=cursor.getCount();
+
         db.close();
+        cursor.close();
         return count > 0;
+
     }
 }
 

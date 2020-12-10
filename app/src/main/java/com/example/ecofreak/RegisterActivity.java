@@ -1,14 +1,13 @@
 package com.example.ecofreak;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText mtextusername;
@@ -40,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
             String Password = mtextpassword.getText().toString().trim();
             String Confirm_Password=mtextconfirmpassword.getText().toString().trim();
             if(Password.equals(Confirm_Password)){
-                long val= db.adduser(Username,Password);
+                long val= db.add_user(  Username,Password);
                 if(val>0){
                     Toast.makeText(RegisterActivity.this,"Registeration successful",Toast.LENGTH_SHORT).show();
                     Intent move_to_login=new Intent(RegisterActivity.this, com.example.ecofreak.MainActivity.class);

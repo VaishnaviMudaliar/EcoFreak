@@ -12,4 +12,7 @@
     <string name="login">Login</string>
     <string name="create_an_account">create_an_account</string>
     <string name="email">Email</string>
+    <string name="enter_source_location">Enter Source Location</string>
+    <string name="enter_destination_location">Enter Destination Location</string>
+    <string name="display_track">Display Track</string>
 </resources>
